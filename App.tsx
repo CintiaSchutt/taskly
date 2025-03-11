@@ -1,12 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 
-/*
-  view is same as div
-  all text must be surround by a text tag
-  all styling in React Native is using flexbox, it's similar to the web, but some defaults are different
-*/
-
 export default function App() {
   return (
     <View style={styles.container}>
