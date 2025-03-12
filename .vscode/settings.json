@@ -1,0 +1,7 @@
+{
+  "editor.autoClosingBrackets": "always",
+  "editor.language.brackets": [],
+  "prettier.bracketSameLine": false,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true
+}

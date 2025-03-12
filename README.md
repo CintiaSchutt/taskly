@@ -29,12 +29,19 @@ open the camera app and scan the QR code to deep link to Expo Go.
 - Positioning in React Native is done with Flexbox, few differences from the web:
 
   - all elements have `display: flex` by default
-  - `dlexDirection` defaults to `column` (instead of `row`)
+  - `flexDirection` defaults to `column` (instead of `row`)
   - `alignContent` defaults to `flex-start` (instead of `strech`)
   - `flexShrink` defaults to `0` (instead of `1`)
   - the `flex` parameter only supports a single number
   - cannot have global styles in React Native, an easy way to share styles between components is have a shared theme file
 
-  ### Button
+### Button
 
-  In order to make anything into a button, wrap it in a Pressable or Touchable component. The two main components you use here are `TouchableOpacity`, and `Pressable`.
+In order to make anything into a button, wrap it in a Pressable or Touchable component. The two main components you use here are `TouchableOpacity`, and `Pressable`.
+
+### Icons
+Expo icons is built on top of react-native-vector-icons and have a convenient website to search for icons https://icons.expo.fyi/Index.
+
+To install: `npx expo install @expo/vector-icons`
+
+SVGs are not the most optimal way to render things on react native (in particular Android).
