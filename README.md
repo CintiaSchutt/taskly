@@ -45,3 +45,8 @@ Expo icons is built on top of react-native-vector-icons and have a convenient we
 To install: `npx expo install @expo/vector-icons`
 
 SVGs are not the most optimal way to render things on react native (in particular Android).
+
+### Navigation
+React Native doesn't come with a navigation library built in, so need to use external library to handle this.
+Expo Router is a file system-based navigation for React Native, and it's built on top of React Navigation.
+
