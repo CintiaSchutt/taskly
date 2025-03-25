@@ -49,4 +49,36 @@ SVGs are not the most optimal way to render things on react native (in particula
 ### Navigation
 React Native doesn't come with a navigation library built in, so need to use external library to handle this.
 Expo Router is a file system-based navigation for React Native, and it's built on top of React Navigation.
+The filename-to-URL mapping is more obvious on the web. Making it work for mobile has some additional difficulties because we have different types of navigation patterns:
+ - Stack 
+    - displaying screens in Stack is the default way to navigate. It means that when you navigate to a new screen, it's rendered on top of the current screen.
+ - Modal
+    - rendering a screen as a Modal, means rendering it on top of the other content. It's important to note that in order for this to work, the modal screen must be defined above or adjacent to the other screens it's being rendered on top of. So for example you couldn't render a screen within a tab navigator modally over the navigator. 
+ - Tabs --> Bottom tab navigation
+    - the bottom tab navigaion means rendering the screens (or stacks of screens) as bottom tabs where the tabs are always visible so you can easily switch between them.
+
+The key is to making it work is `_layout` routes.
+Each folder may have exactly one layout route and it will dictate how the files in the route get laid out.
+
+To install: `npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar`
+
+Change the main entry in `package.json` to `"main": "expo-router/entry"`
+Modify `app.json` to add a sheme: { "sheme": "app-name" }
+  --> the reason this is required is that Expo Router comes with deep linking built in 
+    (deep linking is basically creating a URL that opens your app to a specific screen)
+  --> the way deep linking works on mobile is that your mobile app registers to listen to a specific scheme
+
+#### Ways to navigate
+There are 3 main ways to navigate between screens:
+
+Using the `Link` component
+Programmatically with the `useRouter` hook
+Using the built-in header and bottom tabs button
+
+#### Nested navigators
+You can nest navigators pretty much infinitely: a stack within a stack, a stack within a tab, a tab within a stack within a screen.
+
+
+### Useful Commands
+--> restart the bundler: `npx expo start --reset-cache`
 

@@ -22,7 +22,7 @@ export function ShoppingListItem({ name, isCompleted }: Props) {
           text: "Cancel",
           style: "cancel",
         },
-      ]
+      ],
     );
   };
 
